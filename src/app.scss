@@ -10,7 +10,9 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: red solid;
+  border-bottom: 1px black solid;
+  background-color: #464646;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
   img {
     width: 150px;
@@ -25,20 +27,37 @@ header {
 
     h4 {
       margin-bottom: -20px;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
       font-size: 5em;
       color: red;
+      text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
   }
 
   button {
     height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: red;
+    border: 1px solid #333;
+    font-weight: bolder;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: "Finger Paint", sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background-color: rgb(133, 1, 1);
+      color: white;
+    }
   }
 }
 
-// ===== MODAL =====
+// CONFIGURAÇÃO MODAL
 .Modal {
   z-index: 1000;
   width: 100%;
@@ -49,18 +68,22 @@ header {
   align-items: center;
   position: fixed;
   inset: 0; // substitui top: 0; left: 0;
+  font-family: "Finger Paint", sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
   .conteudoModal {
     display: flex;
     flex-direction: column;
-    background-color: #fefae0;
+    background-color: #464646;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    color: #18022a;
+    color: white;
     width: 50vw;
-    height: 80vh;
+    height: 60vh;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: black solid 2px;
 
     .divBotaoFechaModal {
       width: 100%;
@@ -72,23 +95,32 @@ header {
         border: none;
         font-size: 1.2rem;
         cursor: pointer;
+        color: red;
       }
     }
 
     .dificuldadeModal {
       margin-top: 20px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 30%;
-      border: red solid;
+      flex-direction: column;
       font-size: 1.5em;
+
+      h2 {
+        font-size: 1em;
+      }
+
+      .opcao {
+        display: flex;
+        align-items: center;
+      }
 
       .switch {
         display: flex;
         align-items: center;
         gap: 10px;
         cursor: pointer;
+        margin: 0 30px 15px 0;
+        padding-top: 10px;
 
         input {
           display: none;
@@ -122,6 +154,238 @@ header {
             transform: translateX(24px);
           }
         }
+      }
+    }
+  }
+}
+
+.jogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .regras {
+    background-color: black;
+    color: red;
+    width: 70%;
+    height: 71vh;
+    text-align: center;
+    font-family: "Finger Paint", sans-serif;
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    p {
+      margin-bottom: 50px;
+    }
+
+    .btnIniciar {
+      height: 120px;
+      width: 200px;
+      background-color: red;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(138, 7, 7, 0.712);
+      font-size: 2em;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        background-color: rgb(133, 1, 1);
+        color: white;
+      }
+    }
+  }
+
+  .divForcaPalavra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    margin-right: 20px;
+    height: 58vh;
+
+    .palavra {
+      display: flex;
+      justify-content: center;
+      gap: 12px; // distância entre as letras
+      margin-top: 20px;
+      margin-left: -40px;
+
+      .letra,
+      .traco {
+        font-size: 2rem;
+        font-weight: bold;
+        border-bottom: 3px solid black; // linha para os tracinhos
+        min-width: 24px; // largura mínima para cada letra
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .traco {
+        color: transparent; // mostra só o traço
+      }
+    }
+  }
+
+  .teclado {
+    width: 40%;
+    height: 30%;
+
+    button {
+      width: 34px;
+      height: 34px;
+      margin: 2px 2px 2px 2px;
+    }
+  }
+
+  .vitoria {
+    font-family: "Finger Paint", sans-serif;
+    background-color: #333;
+    height: 40vh;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+
+    strong {
+      font-size: 2em;
+    }
+
+    button {
+      height: 90px;
+      width: 150px;
+      background-color: red;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(138, 7, 7, 0.712);
+      font-size: 1.4em;
+      margin-top: 20px;
+    }
+  }
+
+  .derrota {
+    font-family: "Finger Paint", sans-serif;
+    background-color: #333;
+    height: 40vh;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+
+    strong {
+      font-size: 2em;
+    }
+
+    button {
+      height: 90px;
+      width: 150px;
+      background-color: red;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(138, 7, 7, 0.712);
+      font-size: 1.4em;
+      margin-top: 20px;
+    }
+  }
+}
+
+footer {
+  background-color: #464646;
+  border-top: 1px black solid;
+
+  .divFooter {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    color: white;
+    justify-content: space-around;
+
+    img {
+      width: 100px;
+    }
+
+    div {
+      text-align: center;
+    }
+  }
+}
+
+//RESPONSIVIDADE
+@media (max-width: 500px) {
+  header {
+    img {
+      width: 100px;
+    }
+
+    .headerTitulo {
+      h1 {
+        font-size: 4em;
+      }
+    }
+
+    button {
+      font-size: 0.6em;
+    }
+  }
+
+  .Modal {
+    .conteudoModal {
+      width: 100vw;
+    }
+  }
+
+  .jogo {
+    .regras {
+      width: 100%;
+      height: 78vh;
+    }
+
+    .divForcaPalavra {
+      height: 64vh;
+      margin-right: 0;
+    }
+
+    .vitoria {
+      margin-left: 0px;
+      font-size: 0.9em;
+      text-align: center;
+
+      strong {
+        font-size: 1.4em;
+      }
+    }
+
+    .derrota {
+      margin-left: 0px;
+      font-size: 0.9em;
+      text-align: center;
+
+      strong {
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  footer {
+    .divFooter {
+      width: 100%;
+
+      img {
+        width: 66px;
+      }
+
+      div {
+        font-size: 0.9em;
       }
     }
   }
