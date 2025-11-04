@@ -295,7 +295,11 @@ export default function App() {
   return (
     <>
       <header>
-        <img src={logo} alt="Logo do jogo da forca" />
+        <img
+          src={logo}
+          alt="Logo do jogo da forca"
+          onClick={() => window.location.reload()}
+        />
         <div className="headerTitulo">
           <h4>JOGO DA</h4>
           <h1>FORCA</h1>
@@ -371,11 +375,15 @@ export default function App() {
       </main>
       <footer>
         <div className="divFooter">
-          <img src={logo} alt="Logo do jogo da forca" />
+          <img
+            src={logo}
+            alt="Logo do jogo da forca"
+            onClick={() => window.location.reload()}
+          />
           <div>
             <p>IFPE - Tecnologia em Análise e Desenvolvimento de Sistemas.</p>
             <p>Projeto realizado como atividade de Introdução a Programação</p>
-            <p>Alunos: Alexandre Alves, Maria Alice Guerra e Rafael Santos</p>
+            <p>Alunos: Alexandre Alves, Maria Alice Guerra e Rafael Vicente</p>
             <p>Professor: Willbert Santos</p>
           </div>
         </div>

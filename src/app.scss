@@ -16,6 +16,7 @@ header {
 
   img {
     width: 150px;
+    cursor: pointer;
   }
 
   .headerTitulo {
@@ -234,6 +235,9 @@ header {
   .teclado {
     width: 40%;
     height: 30%;
+    display: flex; // ✅ adicionado: garante layout flexível
+    flex-wrap: wrap; // ✅ adicionado: permite quebrar linhas
+    justify-content: center; // ✅ adicionado: centraliza botões
 
     button {
       width: 34px;
@@ -312,6 +316,7 @@ footer {
 
     img {
       width: 100px;
+      cursor: pointer;
     }
 
     div {
@@ -324,41 +329,62 @@ footer {
 @media (max-width: 500px) {
   header {
     img {
-      width: 100px;
+      width: 80px;
     }
 
     .headerTitulo {
       h1 {
-        font-size: 4em;
+        font-size: 3em;
       }
     }
 
     button {
-      font-size: 0.6em;
+      font-size: 0.5em;
     }
   }
 
   .Modal {
     .conteudoModal {
-      width: 100vw;
+      width: 95vw;
+      height: 50vh;
     }
   }
 
   .jogo {
+    flex-direction: column; // ✅ adicionado: empilha os elementos principais
+    align-items: center; // ✅ centraliza tudo verticalmente
+
     .regras {
       width: 100%;
       height: 78vh;
     }
 
     .divForcaPalavra {
-      height: 64vh;
-      margin-right: 0;
+      height: 65vh;
+      margin: 0;
+
+      .palavra {
+        margin-top: 0;
+        margin-left: 0;
+
+        .letra,
+        .traco {
+          min-width: 0;
+        }
+      }
+    }
+
+    .teclado {
+      width: 100%;
+      margin-bottom: 15px;
     }
 
     .vitoria {
       margin-left: 0px;
       font-size: 0.9em;
       text-align: center;
+      height: auto;
+      margin: -40px 0 15px 0;
 
       strong {
         font-size: 1.4em;
@@ -369,6 +395,8 @@ footer {
       margin-left: 0px;
       font-size: 0.9em;
       text-align: center;
+      height: auto;
+      margin: -40px 0 15px 0;
 
       strong {
         font-size: 1.4em;
@@ -385,7 +413,7 @@ footer {
       }
 
       div {
-        font-size: 0.9em;
+        font-size: 0.7em;
       }
     }
   }
