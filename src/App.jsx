@@ -319,6 +319,9 @@ export default function App() {
               <br />- Escolha a dificuldade nas configurações
               <br />- Adivinhe as letras da palavra antes de completar a forca!
               <br />- Você tem 6 tentativas antes de ser enforcado.
+              <br />- Ao completar palavra no fácil (10 pontos), normal (20
+              pontos) e difícil (40 pontos).
+              <br />- Cada tentativa não usada rende 5 pontos de bônus.
             </p>
             <button
               className="btnIniciar"
@@ -382,7 +385,7 @@ export default function App() {
           />
           <div>
             <p>IFPE - Tecnologia em Análise e Desenvolvimento de Sistemas.</p>
-            <p>Projeto realizado como atividade de Introdução a Programação</p>
+            <p>Projeto da disciplina de Introdução a Programação</p>
             <p>Alunos: Alexandre Alves, Maria Alice Guerra e Rafael Vicente</p>
             <p>Professor: Willbert Santos</p>
           </div>
